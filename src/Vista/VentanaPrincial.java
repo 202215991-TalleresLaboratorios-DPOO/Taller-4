@@ -26,6 +26,7 @@ public class VentanaPrincial extends JFrame {
 	private Menu menu;
 	private Top10 top10;
 	private DatosJugador datosJugador;
+	private TopVentana topVentana;
 	
 	public VentanaPrincial() {
 		// Configuraciones Generales
@@ -110,7 +111,7 @@ public class VentanaPrincial extends JFrame {
 	}
 
 	public void verTop10() {
-		Top topVentana = new Top(this);
+		topVentana = new TopVentana(this);
 		topVentana.setVisible(true);
 		
 	}

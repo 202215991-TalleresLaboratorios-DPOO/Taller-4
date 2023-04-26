@@ -16,14 +16,14 @@ import javax.swing.JPanel;
 
 import uniandes.dpoo.taller4.modelo.RegistroTop10;
 
-public class Top extends JFrame implements MouseMotionListener {
+public class TopVentana extends JFrame implements MouseMotionListener {
 
 	private VentanaPrincial ventanaPrincipal;
 	private JPanel listaTop;
 	private Collection<RegistroTop10> listaRejistro ;
 	private JLabel[] listaLabels;
 	
-	public Top(VentanaPrincial ventanaPrincipal) {
+	public TopVentana(VentanaPrincial ventanaPrincipal) {
 		
 		// Configuraciones Generales
 		setLayout(new BorderLayout());

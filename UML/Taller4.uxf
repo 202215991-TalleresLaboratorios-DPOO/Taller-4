@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>60</y>
+      <w>222</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Vista::Configuraciones
+--
+-comboBox: JComboBox&lt;String&gt;
+-buttonGroup: ButtonGroup
+--
++Configuraciones(VentanaPrincial ventanaPrincial): ctor
+-crearSelectores(): void
++getTamaño(): int
++getDificultad(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>318</x>
+      <y>504</y>
+      <w>138</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Vista::DatosJugador
+--
+-jugadasInfo: JTextField
+-nombreJugador: JTextField
+--
++DatosJugador(): ctor
++setJugadas(int jugadas): void
++existNombre(): boolean
++setNombre(String nombre): void
++getNombre(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>264</y>
+      <w>180</w>
+      <h>258</h>
+    </coordinates>
+    <panel_attributes>Vista::Juego
+--
+-tamaño: int
+-dificultad: int
+-xPresente: int
+-yPresente: int
+-image: BufferedImage
+--
++Juego(VentanaPrincial ventanaPrincial): ctor
++actualizarConfiguraciones(): void
++nuevoJuego(): void
++getJugadas(): int
++reiniciarTablero(): void
++checkGanador(): boolean
++getPuntaje(): int
++paint(Graphics g): void
++mouseDragged(MouseEvent e): void
++mouseMoved(MouseEvent e): void
++mouseClicked(MouseEvent e): void
++mousePressed(MouseEvent e): void
++mouseReleased(MouseEvent e): void
++mouseEntered(MouseEvent e): void
++mouseExited(MouseEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>546</x>
+      <y>654</y>
+      <w>180</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Vista::Menu
+--
+--
++Menu(VentanaPrincial ventanaPrincial): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>276</x>
+      <y>336</y>
+      <w>180</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Vista::TopVentana
+--
+-listaTop: JPanel
+-listaLabels: JLabel[]
+--
++Top(VentanaPrincial ventanaPrincipal): ctor
++cargarTop(): void
++llenarTop(): void
++mouseDragged(MouseEvent e): void
++mouseMoved(MouseEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>330</y>
+      <w>204</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Vista::VentanaPrincial
+--
+
+--
++VentanaPrincial(): ctor
++nuevoJuego(): void
++reiniciarJuego(): void
++actualizarContador(): void
++getTamaño(): int
++getDificultad(): int
++existeJugador(): boolean
++checkGanador(): void
++verTop10(): void
++cargarTop10(): void
++getTop(): Collection&lt;RegistroTop10&gt;
++cambiarJugador(): void
+-salvarRecords(): void
++agregarRegistro(): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>354</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.taller4.modelo::RegistroTop10
+--
+-nombre: String
+-puntos: int
+--
++RegistroTop10(String nombre, int puntos): ctor
++darPuntos(): int
++darNombre(): String
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1386</x>
+      <y>360</y>
+      <w>156</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.taller4.modelo::Tablero
+--
+-tablero: boolean[][]
+-tablero_original: boolean[][]
+-jugadas: int
+--
++Tablero(int tamano): ctor
++reiniciar(): void
++salvar_tablero(): void
++desordenar(int dificultad): void
++darJugadas(): int
++darTablero(): boolean[][]
++jugar(int fila, int columna): void
++tableroIluminado(): boolean
++calcularPuntaje(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>606</y>
+      <w>198</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.taller4.modelo::Top10
+--
+-registros: PriorityQueue&lt;RegistroTop10&gt;
+-peorPuntaje: int
+--
++Top10(): ctor
++esTop10(int puntaje): boolean
++agregarRegistro(String nombre, int puntaje): void
++darRegistros(): Collection&lt;RegistroTop10&gt;
++salvarRecords(File archivo): void
++cargarRecords(File archivo): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>804</x>
+      <y>408</y>
+      <w>216</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 juego</panel_attributes>
+    <additional_attributes>340.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>804</x>
+      <y>522</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 top10</panel_attributes>
+    <additional_attributes>290.0;140.0;290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>162</y>
+      <w>84</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 configuraciones</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>564</y>
+      <w>48</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 menu</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>534</y>
+      <w>162</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 datosJugador</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>162</y>
+      <w>84</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 ventanaPrincipal</panel_attributes>
+    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>408</y>
+      <w>168</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 topVentana</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>678</x>
+      <y>564</y>
+      <w>84</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 ventanaPrincial</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>804</x>
+      <y>456</y>
+      <w>216</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 ventanaPrincipal</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>366</y>
+      <w>168</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 ventanaPrincipal</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>186</x>
+      <y>396</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n listaRejistro</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1182</x>
+      <y>414</y>
+      <w>216</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 tablero</panel_attributes>
+    <additional_attributes>340.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
